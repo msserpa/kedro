@@ -148,7 +148,7 @@ commands:
         # `conda install` command rather than one at a time in several sequential `conda install`s.
       - run:
           name: Update anaconda
-          command: conda activate kedro_builder; y | conda update --all
+          command: conda activate kedro_builder; echo "y" | conda update --all
       - run:
           name: Install GDAL, Fiona and pytables
           command: conda activate kedro_builder; conda install gdal fiona pytables -c conda-forge -y
