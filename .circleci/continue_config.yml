@@ -93,6 +93,9 @@ commands:
       - run:
           name: Create 'kedro_builder' conda environment
           command: conda update -n base -c defaults conda; conda create -n kedro_builder python=<<parameters.python_version>> -y
+      - run:
+          name: Check python version
+          command: conda activate kedro_builder; python -V
 
   win_setup_env:
     steps:
@@ -155,9 +158,9 @@ commands:
       - run:
           name: Update anaconda
           command: conda activate kedro_builder; echo "y" | conda update --all
-      - run:
-          name: Print Python environment
-          command: conda activate kedro_builder; make print-python-env
+#      - run:
+#          name: Print Python environment
+#          command: conda activate kedro_builder; make print-python-env
       - run:
           name: Pip freeze
           command: conda activate kedro_builder; pip freeze
