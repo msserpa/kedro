@@ -311,7 +311,6 @@ class MemoryProfilingHooks:
         )
         before_mem_usage = _normalise_mem_usage(before_mem_usage)
         self._mem_usage[dataset_name] = before_mem_usage
-        )
 
     @hook_impl
     def after_dataset_loaded(self, dataset_name: str) -> None:
